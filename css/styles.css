@@ -3,6 +3,7 @@
   --second-text-coor: #212121;
   --accent-hover-color: #2196f3;
   --primery-white-color: #ffffff;
+  --main-tranzitions: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* скидає відступи */
@@ -19,12 +20,16 @@ ul {
 }
 
 /* прибирає крапки з лівого боку
- прибирає лівий падінг від браузера*/
+ прибирає лівий падінг від браузера
+ прибирає відступи зверху і знизу ul*/
 
 ul {
   list-style: none;
   padding-inline-start: 0;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
 }
+
 
 /* container */
 
@@ -59,6 +64,7 @@ body {
 
 .box {
   display: flex;
+  align-items: center;
 }
 
 .logo-pad-mr{
@@ -84,14 +90,6 @@ padding-bottom: 25px;
 
 .site-nav {
   display: flex;
- }
-
-.nav-item{
-  padding: 32px 0;
-}
-
-.nav-item:not(:last-child) {
-  margin-right: 50px;
 }
 
 .site-nav .link {
@@ -101,19 +99,40 @@ padding-bottom: 25px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+  transition: color var(--main-tranzitions);
 }
+
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-hover-color);
 }
 
-.site-nav .link.current {
+.site-nav .current-link {
+  position: relative;
   color: var(--accent-hover-color);
 }
 
+.nav-item {
+  padding: 32px 0;
+}
+
+.nav-item:not(:last-child) {
+  margin-right: 50px;
+}
+
+.current-link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 4px;
+  width: 100%;
+  left: 0;
+  bottom: -34px;
+  background-color: var(--accent-hover-color);
+  border-radius: 2px;
+}
+
 /* contacts */
-
-
 
 .contacts {
   display: flex;
@@ -137,6 +156,7 @@ padding: 32px 0;
   line-height: 1.14;
   letter-spacing: 0.02em;
   text-decoration: none;
+  transition: color var(--main-tranzitions);
 }
 
 .contacts-item .link:hover,
@@ -262,9 +282,28 @@ fill: var(--accent-hover-color);
   padding: 0;
 }
 .works-item {
+  position: relative;
   width: 370px;
   display: block;
   margin: 0;
+}
+.works-overlay{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.works-overay-title{
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  color: var(--primery-white-color);
 }
 
 img {
@@ -340,6 +379,7 @@ width: 206px;
   height: 44px;
   /* outline: 2px solid red; */
   fill: #AFB1B8;
+  transition: background-color var(--main-tranzitions), fill var(--main-tranzitions);
 }
 
 .social-link:hover,
@@ -373,6 +413,8 @@ width: 206px;
   fill: #AFB1B8;
   border: 1px solid #AFB1B8;
   border-radius: 4px;
+  transition: background-color var(--main-tranzitions),
+  fill var(--main-tranzitions);
 }
 
 .company-link:hover,
@@ -424,10 +466,11 @@ width: 206px;
   color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
   font-style: normal;
+  transition: color var(--main-tranzitions);
 }
 
 .address .link-contacts:hover,
-.address .link:focus {
+.address .link-contacts:focus {
   color: var(--accent-hover-color);
 }
 
@@ -459,6 +502,7 @@ width: 206px;
   background-color: rgba(255, 255, 255, 0.1);
   padding: 12px;
   fill:var(--primery-white-color);
+  transition: background-color var(--main-tranzitions);
 }
 
 .social-link-footer:hover,
@@ -513,6 +557,9 @@ width: 206px;
   font-size: 16px;
   line-height: 1.62;
   letter-spacing: 0.03em;
+  transition: color var(--main-tranzitions),
+  background-color var(--main-tranzitions),
+  box-shadow var(--main-tranzitions)
 }
 
 .portfolio-button:hover,
@@ -539,6 +586,7 @@ width: 206px;
   border: 1px solid #EEEEEE;
   color: var(--primary-text-color);
   background-color: var(--primery-white-color);
+  transition: box-shadow var(--main-tranzitions);
 }
 
 .services:hover,
