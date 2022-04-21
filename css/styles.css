@@ -67,19 +67,18 @@ body {
   align-items: center;
 }
 
-.logo-pad-mr{
-margin-right: 93px;
-padding-top: 24px;
-padding-bottom: 25px;
-}
-
 .logo {
+  display: block;
+  width: 145px;
   color: var(--accent-hover-color);
   font-family: Raleway, sans-serif;
   font-weight: bold;
   font-size: 26px;
   line-height: 1.2;
   text-decoration: none;
+  margin-right: 93px;
+  padding-top: 24px;
+  padding-bottom: 25px;
 }
 
 .second-logo {
@@ -98,6 +97,7 @@ padding-bottom: 25px;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  padding: 32px 0;
   text-decoration: none;
   transition: color var(--main-tranzitions);
 }
@@ -112,10 +112,6 @@ padding-bottom: 25px;
   color: var(--accent-hover-color);
 }
 
-.nav-item {
-  padding: 32px 0;
-}
-
 .nav-item:not(:last-child) {
   margin-right: 50px;
 }
@@ -127,7 +123,7 @@ padding-bottom: 25px;
   height: 4px;
   width: 100%;
   left: 0;
-  bottom: -34px;
+  bottom: -3px;
   background-color: var(--accent-hover-color);
   border-radius: 2px;
 }
@@ -140,21 +136,19 @@ padding-bottom: 25px;
   margin-left: auto;
 }
 
-.contacts-item{
-padding: 32px 0;
-}
-
 .contacts-item:not(:last-child) {
   margin-right: 30px;
 }
 
 .contacts .link {
+  display: block;
   color: var(--primary-text-color);
   fill: #757575;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
+  padding: 32px 0;
   text-decoration: none;
   transition: color var(--main-tranzitions);
 }
@@ -447,10 +441,6 @@ width: 206px;
 
 .footer-flex{
   display: flex;
-}
-
-.logo-dn {
-  width: 145px;
 }
 
 .second-bottom-logo {
